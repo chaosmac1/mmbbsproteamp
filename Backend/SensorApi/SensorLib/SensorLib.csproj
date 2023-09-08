@@ -1,15 +1,18 @@
 <Project Sdk="Microsoft.NET.Sdk">
 
     <PropertyGroup>
-        <TargetFramework>net7.0</TargetFramework>
+        <TargetFramework>net8.0</TargetFramework>
         <ImplicitUsings>enable</ImplicitUsings>
         <Nullable>enable</Nullable>
+        <Version>11</Version>
+        <EnablePreviewFeatures>True</EnablePreviewFeatures>
     </PropertyGroup>
 
     <ItemGroup>
       <PackageReference Include="BCrypt.Net-Next" Version="4.0.3" />
       <PackageReference Include="Dapper" Version="2.0.151" />
       <PackageReference Include="Microsoft.AspNetCore.OpenApi" Version="7.0.10" />
+      <PackageReference Include="NetEscapades.EnumGenerators" Version="1.0.0-beta08" />
       <PackageReference Include="Npgsql" Version="7.0.4" />
       <PackageReference Include="Riok.Mapperly" Version="3.1.0" />
       <PackageReference Include="JWT" Version="10.1.0" />
@@ -17,7 +20,6 @@
     </ItemGroup>
 
     <ItemGroup>
-      <Folder Include="AttachmentService\" />
       <Folder Include="Lib\" />
     </ItemGroup>
 

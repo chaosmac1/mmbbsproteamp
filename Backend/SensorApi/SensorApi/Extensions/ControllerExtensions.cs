@@ -1,6 +1,18 @@
 ﻿using System.Net;
+using LamLibAllOver;
 using Microsoft.AspNetCore.Mvc;
+using NetEscapades.EnumGenerators;
 using Npgsql;
+using SensorLib.AttachmentService;
+using SensorLib.AttachmentService.Interface;
+using SensorLib.Class;
+using SensorLib.Database;
+using SensorLib.Record;
+using LamLibAllOver;
+using Org.BouncyCastle.Utilities.Net;
+using SensorLib.Database;
+using SensorLib.Manager;
+using SensorLib.Record;
 
 namespace SensorApi.Extension;
 
@@ -80,38 +92,21 @@ public class ControllerExtensions : ControllerBase, IController {
 
     public Option<Token> GetCookie() => GetCookieToken();
 
-    public ResultErr<string> SetCookie(Token token) {
-        try
-        {
-            this.AppendCookie(ECookie.LoginCookie, token.ToString() ?? string.Empty);
-            return ResultErr<string>.Ok();
-        }
-        catch (Exception e) {
-            return e.ToResultErr();
-        }
+    public void SetCookie(Token token) {
+        this.AppendCookie(ECookie.LoginCookie, token.ToString() ?? string.Empty);
     }
 
     public async ValueTask<Option<UserIdAndToken>> GetCookieAndUserId(DbWrapper db) {
         var cookieOp = GetCookie();
         if (cookieOp.IsNotSet())
             return default;
-
-        var res = await CookieTokenManager.GetCookieTokenAsync(db.Db, cookieOp.Unwrap().Value);
+        
+        var res = await CookieTokenManager.GetCookieByTokenAsync(db.Db, cookieOp.Unwrap().Value);
         if (res.IsNotSet())
             return default;
         
-        return Option<UserIdAndToken>.With(new UserIdAndToken(res.Unwrap().UserId, res.Unwrap().Token));
-    }
-
-    public Option<IPAddress> GetIpAddress() {
-        try {
-            if (!Request.Headers.TryGetValue("X-Forwarded-For", out var ip) || ip.Count == 0)
-                return Option<IPAddress>.Empty;
-            return Option<IPAddress>.With(IPAddress.Parse(ip.FirstOrDefault()!.Split(",")[0]));
-        }
-        catch (Exception e) {
-            return default;
-        }
+        return Option<UserIdAndToken>
+            .With(new UserIdAndToken(res.Unwrap().UserId, res.Unwrap().TokenId));
     }
 
     public void RemoveCookie() => RemoveCookieByEName(ECookie.LoginCookie);

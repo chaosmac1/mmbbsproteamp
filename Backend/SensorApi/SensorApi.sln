@@ -4,8 +4,6 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SensorApi", "SensorApi\Sens
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SensorLib", "SensorLib\SensorLib.csproj", "{1264809F-D985-42B7-82EF-C28F89CD807B}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ServiceMqtt", "ServiceMqtt\ServiceMqtt.csproj", "{6B79321B-6D30-43EA-939A-2DE04921E653}"
-EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -20,9 +18,5 @@ Global
 		{1264809F-D985-42B7-82EF-C28F89CD807B}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{1264809F-D985-42B7-82EF-C28F89CD807B}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{1264809F-D985-42B7-82EF-C28F89CD807B}.Release|Any CPU.Build.0 = Release|Any CPU
-		{6B79321B-6D30-43EA-939A-2DE04921E653}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{6B79321B-6D30-43EA-939A-2DE04921E653}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{6B79321B-6D30-43EA-939A-2DE04921E653}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{6B79321B-6D30-43EA-939A-2DE04921E653}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 EndGlobal

@@ -1,7 +1,7 @@
 {
   "version": 3,
   "targets": {
-    "net7.0": {
+    "net8.0": {
       "BCrypt.Net-Next/4.0.3": {
         "type": "package",
         "compile": {
@@ -102,6 +102,19 @@
         "runtime": {
           "lib/netstandard2.0/Microsoft.OpenApi.dll": {
             "related": ".pdb;.xml"
+          }
+        }
+      },
+      "NetEscapades.EnumGenerators/1.0.0-beta08": {
+        "type": "package",
+        "compile": {
+          "lib/netstandard2.0/NetEscapades.EnumGenerators.Attributes.dll": {
+            "related": ".xml"
+          }
+        },
+        "runtime": {
+          "lib/netstandard2.0/NetEscapades.EnumGenerators.Attributes.dll": {
+            "related": ".xml"
           }
         }
       },
@@ -396,6 +409,24 @@
         "microsoft.openapi.nuspec"
       ]
     },
+    "NetEscapades.EnumGenerators/1.0.0-beta08": {
+      "sha512": "xMALwEe2raVfGmczJUJzLQuxKL9f3NnsArSGgG1YH2sUqb5GAmqzyKa+oNGfJS+tRdj6NY4+DlcbAmliNoBMdg==",
+      "type": "package",
+      "path": "netescapades.enumgenerators/1.0.0-beta08",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "README.md",
+        "analyzers/dotnet/cs/NetEscapades.EnumGenerators.Attributes.dll",
+        "analyzers/dotnet/cs/NetEscapades.EnumGenerators.dll",
+        "lib/net451/NetEscapades.EnumGenerators.Attributes.dll",
+        "lib/net451/NetEscapades.EnumGenerators.Attributes.xml",
+        "lib/netstandard2.0/NetEscapades.EnumGenerators.Attributes.dll",
+        "lib/netstandard2.0/NetEscapades.EnumGenerators.Attributes.xml",
+        "netescapades.enumgenerators.1.0.0-beta08.nupkg.sha512",
+        "netescapades.enumgenerators.nuspec"
+      ]
+    },
     "Newtonsoft.Json/13.0.2": {
       "sha512": "R2pZ3B0UjeyHShm9vG+Tu0EBb2lC8b0dFzV9gVn50ofHXh9Smjk6kTn7A/FdAsC8B5cKib1OnGYOXxRBz5XQDg==",
       "type": "package",
@@ -595,42 +626,41 @@
     }
   },
   "projectFileDependencyGroups": {
-    "net7.0": [
+    "net8.0": [
       "BCrypt.Net-Next >= 4.0.3",
       "Dapper >= 2.0.151",
       "JWT >= 10.1.0",
       "LamLibAllOver >= 2.16.0",
       "Microsoft.AspNetCore.OpenApi >= 7.0.10",
+      "NetEscapades.EnumGenerators >= 1.0.0-beta08",
       "Npgsql >= 7.0.4",
       "Riok.Mapperly >= 3.1.0"
     ]
   },
   "packageFolders": {
-    "C:\\Users\\schoppe\\.nuget\\packages\\": {}
+    "/home/chaosmac/.nuget/packages/": {}
   },
   "project": {
-    "version": "1.0.0",
+    "version": "11.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\schoppe\\Documents\\mmbbsprotemp\\Backend\\SensorApi\\SensorLib\\SensorLib.csproj",
+      "projectUniqueName": "/aprojekt/schule/Backend/SensorApi/SensorLib/SensorLib.csproj",
       "projectName": "SensorLib",
-      "projectPath": "C:\\Users\\schoppe\\Documents\\mmbbsprotemp\\Backend\\SensorApi\\SensorLib\\SensorLib.csproj",
-      "packagesPath": "C:\\Users\\schoppe\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\schoppe\\Documents\\mmbbsprotemp\\Backend\\SensorApi\\SensorLib\\obj\\",
+      "projectPath": "/aprojekt/schule/Backend/SensorApi/SensorLib/SensorLib.csproj",
+      "packagesPath": "/home/chaosmac/.nuget/packages/",
+      "outputPath": "/aprojekt/schule/Backend/SensorApi/SensorLib/obj/",
       "projectStyle": "PackageReference",
       "configFilePaths": [
-        "C:\\Users\\schoppe\\AppData\\Roaming\\NuGet\\NuGet.Config",
-        "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+        "/home/chaosmac/.nuget/NuGet/NuGet.Config"
       ],
       "originalTargetFrameworks": [
-        "net7.0"
+        "net8.0"
       ],
       "sources": {
-        "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
         "https://api.nuget.org/v3/index.json": {}
       },
       "frameworks": {
-        "net7.0": {
-          "targetAlias": "net7.0",
+        "net8.0": {
+          "targetAlias": "net8.0",
           "projectReferences": {}
         }
       },
@@ -638,11 +668,14 @@
         "warnAsError": [
           "NU1605"
         ]
+      },
+      "restoreAuditProperties": {
+        "enableAudit": "default"
       }
     },
     "frameworks": {
-      "net7.0": {
-        "targetAlias": "net7.0",
+      "net8.0": {
+        "targetAlias": "net8.0",
         "dependencies": {
           "BCrypt.Net-Next": {
             "target": "Package",
@@ -663,6 +696,10 @@
           "Microsoft.AspNetCore.OpenApi": {
             "target": "Package",
             "version": "[7.0.10, )"
+          },
+          "NetEscapades.EnumGenerators": {
+            "target": "Package",
+            "version": "[1.0.0-beta08, )"
           },
           "Npgsql": {
             "target": "Package",
@@ -689,7 +726,7 @@
             "privateAssets": "all"
           }
         },
-        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.304\\RuntimeIdentifierGraph.json"
+        "runtimeIdentifierGraphPath": "/home/chaosmac/dotnet/sdk/8.0.100-preview.7.23376.3/RuntimeIdentifierGraph.json"
       }
     }
   }

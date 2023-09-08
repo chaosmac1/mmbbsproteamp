@@ -1,5 +1,7 @@
-﻿namespace SensorLib.AttachmentService.Interface; 
+﻿using SensorLib.Database;
 
-public interface IValidation {
-    
+namespace SensorLib.AttachmentService.Interface; 
+
+public interface IValidation<T> where T: IRequest {
+    public ValueTask<bool> Validate(T value, DbWrapper db);
 }

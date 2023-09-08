@@ -18,9 +18,9 @@ LIMIT 1
     public static async Task InsertAsync(NpgsqlConnection db, MqttClientAuth value) {
         await db.ExecuteAsync(@$"
 INSERT INTO MqttClientAuth 
-    (MqttClientId, Name, Password)
+    (MqttClientId, Name, PasswordHash)
 VALUES 
-    (@MqttClientId, @Name, @Password)
+    (@MqttClientId, @Name, @PasswordHash)
 ", value);
     }
 }

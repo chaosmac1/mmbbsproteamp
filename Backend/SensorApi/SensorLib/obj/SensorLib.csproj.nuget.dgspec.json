@@ -1,32 +1,30 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\schoppe\\Documents\\mmbbsprotemp\\Backend\\SensorApi\\SensorLib\\SensorLib.csproj": {}
+    "/aprojekt/schule/Backend/SensorApi/SensorLib/SensorLib.csproj": {}
   },
   "projects": {
-    "C:\\Users\\schoppe\\Documents\\mmbbsprotemp\\Backend\\SensorApi\\SensorLib\\SensorLib.csproj": {
-      "version": "1.0.0",
+    "/aprojekt/schule/Backend/SensorApi/SensorLib/SensorLib.csproj": {
+      "version": "11.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\schoppe\\Documents\\mmbbsprotemp\\Backend\\SensorApi\\SensorLib\\SensorLib.csproj",
+        "projectUniqueName": "/aprojekt/schule/Backend/SensorApi/SensorLib/SensorLib.csproj",
         "projectName": "SensorLib",
-        "projectPath": "C:\\Users\\schoppe\\Documents\\mmbbsprotemp\\Backend\\SensorApi\\SensorLib\\SensorLib.csproj",
-        "packagesPath": "C:\\Users\\schoppe\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\schoppe\\Documents\\mmbbsprotemp\\Backend\\SensorApi\\SensorLib\\obj\\",
+        "projectPath": "/aprojekt/schule/Backend/SensorApi/SensorLib/SensorLib.csproj",
+        "packagesPath": "/home/chaosmac/.nuget/packages/",
+        "outputPath": "/aprojekt/schule/Backend/SensorApi/SensorLib/obj/",
         "projectStyle": "PackageReference",
         "configFilePaths": [
-          "C:\\Users\\schoppe\\AppData\\Roaming\\NuGet\\NuGet.Config",
-          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+          "/home/chaosmac/.nuget/NuGet/NuGet.Config"
         ],
         "originalTargetFrameworks": [
-          "net7.0"
+          "net8.0"
         ],
         "sources": {
-          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
           "https://api.nuget.org/v3/index.json": {}
         },
         "frameworks": {
-          "net7.0": {
-            "targetAlias": "net7.0",
+          "net8.0": {
+            "targetAlias": "net8.0",
             "projectReferences": {}
           }
         },
@@ -34,11 +32,14 @@
           "warnAsError": [
             "NU1605"
           ]
+        },
+        "restoreAuditProperties": {
+          "enableAudit": "default"
         }
       },
       "frameworks": {
-        "net7.0": {
-          "targetAlias": "net7.0",
+        "net8.0": {
+          "targetAlias": "net8.0",
           "dependencies": {
             "BCrypt.Net-Next": {
               "target": "Package",
@@ -59,6 +60,10 @@
             "Microsoft.AspNetCore.OpenApi": {
               "target": "Package",
               "version": "[7.0.10, )"
+            },
+            "NetEscapades.EnumGenerators": {
+              "target": "Package",
+              "version": "[1.0.0-beta08, )"
             },
             "Npgsql": {
               "target": "Package",
@@ -85,7 +90,7 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.304\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "/home/chaosmac/dotnet/sdk/8.0.100-preview.7.23376.3/RuntimeIdentifierGraph.json"
         }
       }
     }
