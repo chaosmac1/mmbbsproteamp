@@ -1,0 +1,23 @@
+{
+  "version": 2,
+  "dgSpecHash": "aR8sU8reDFCyC5yIeve3fMsCscvjayDSUsnvQGzii/gSVtGRkAzzfIhsM7rp59BP2boXfYEQxIQS01utwbUYdw==",
+  "success": true,
+  "projectFilePath": "C:\\Users\\schoppe\\Documents\\mmbbsprotemp\\Backend\\SensorApi\\SensorLib\\SensorLib.csproj",
+  "expectedPackageFiles": [
+    "C:\\Users\\schoppe\\.nuget\\packages\\bcrypt.net-next\\4.0.3\\bcrypt.net-next.4.0.3.nupkg.sha512",
+    "C:\\Users\\schoppe\\.nuget\\packages\\dapper\\2.0.151\\dapper.2.0.151.nupkg.sha512",
+    "C:\\Users\\schoppe\\.nuget\\packages\\jwt\\10.1.0\\jwt.10.1.0.nupkg.sha512",
+    "C:\\Users\\schoppe\\.nuget\\packages\\lamliballover\\2.16.0\\lamliballover.2.16.0.nupkg.sha512",
+    "C:\\Users\\schoppe\\.nuget\\packages\\microsoft.aspnetcore.openapi\\7.0.10\\microsoft.aspnetcore.openapi.7.0.10.nupkg.sha512",
+    "C:\\Users\\schoppe\\.nuget\\packages\\microsoft.extensions.logging.abstractions\\6.0.0\\microsoft.extensions.logging.abstractions.6.0.0.nupkg.sha512",
+    "C:\\Users\\schoppe\\.nuget\\packages\\microsoft.openapi\\1.4.3\\microsoft.openapi.1.4.3.nupkg.sha512",
+    "C:\\Users\\schoppe\\.nuget\\packages\\newtonsoft.json\\13.0.2\\newtonsoft.json.13.0.2.nupkg.sha512",
+    "C:\\Users\\schoppe\\.nuget\\packages\\npgsql\\7.0.4\\npgsql.7.0.4.nupkg.sha512",
+    "C:\\Users\\schoppe\\.nuget\\packages\\portable.bouncycastle\\1.9.0\\portable.bouncycastle.1.9.0.nupkg.sha512",
+    "C:\\Users\\schoppe\\.nuget\\packages\\riok.mapperly\\3.1.0\\riok.mapperly.3.1.0.nupkg.sha512",
+    "C:\\Users\\schoppe\\.nuget\\packages\\system.runtime.compilerservices.unsafe\\6.0.0\\system.runtime.compilerservices.unsafe.6.0.0.nupkg.sha512",
+    "C:\\Users\\schoppe\\.nuget\\packages\\system.text.encodings.web\\6.0.0\\system.text.encodings.web.6.0.0.nupkg.sha512",
+    "C:\\Users\\schoppe\\.nuget\\packages\\system.text.json\\6.0.7\\system.text.json.6.0.7.nupkg.sha512"
+  ],
+  "logs": []
+}
