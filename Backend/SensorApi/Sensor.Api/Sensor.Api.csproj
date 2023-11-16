@@ -1,0 +1,27 @@
+<Project Sdk="Microsoft.NET.Sdk.Web">
+
+    <PropertyGroup>
+        <TargetFramework>net8.0</TargetFramework>
+        <Nullable>enable</Nullable>
+        <ImplicitUsings>enable</ImplicitUsings>
+        <Version>11</Version>
+        <EnablePreviewFeatures>True</EnablePreviewFeatures>
+    </PropertyGroup>
+
+    <ItemGroup>
+        <PackageReference Include="Microsoft.AspNetCore.OpenApi" Version="8.0.0"/>
+        <PackageReference Include="Npgsql" Version="8.0.0-rc.2" />
+        <PackageReference Include="Swashbuckle.AspNetCore" Version="6.5.0"/>
+    </ItemGroup>
+
+    <ItemGroup>
+      <Reference Include="NetEscapades.EnumGenerators.Attributes">
+        <HintPath>..\..\..\..\..\home\chaosmac\.nuget\packages\netescapades.enumgenerators\1.0.0-beta08\lib\netstandard2.0\NetEscapades.EnumGenerators.Attributes.dll</HintPath>
+      </Reference>
+    </ItemGroup>
+
+    <ItemGroup>
+      <ProjectReference Include="..\Sensor.Service\Sensor.Service.csproj" />
+    </ItemGroup>
+
+</Project>

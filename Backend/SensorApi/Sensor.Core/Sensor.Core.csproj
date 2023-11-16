@@ -1,0 +1,26 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+    <PropertyGroup>
+        <TargetFramework>net8.0</TargetFramework>
+        <ImplicitUsings>enable</ImplicitUsings>
+        <Nullable>enable</Nullable>
+        <Version>11</Version>
+        <EnablePreviewFeatures>True</EnablePreviewFeatures>
+    </PropertyGroup>
+
+    <ItemGroup>
+      <PackageReference Include="BCrypt.Net-Next" Version="4.0.3" />
+      <PackageReference Include="Dapper" Version="2.1.21" />
+      <PackageReference Include="Microsoft.AspNetCore.OpenApi" Version="8.0.0-rc.2.23480.2" />
+      <PackageReference Include="NetEscapades.EnumGenerators" Version="1.0.0-beta08" />
+      <PackageReference Include="Npgsql" Version="7.0.6" />
+      <PackageReference Include="Riok.Mapperly" Version="3.2.0" />
+      <PackageReference Include="JWT" Version="10.1.1" />
+      <PackageReference Include="LamLibAllOver" Version="2.17.0" />
+    </ItemGroup>
+
+    <ItemGroup>
+      <ProjectReference Include="..\Sensor.Domain\Sensor.Domain.csproj" />
+    </ItemGroup>
+
+</Project>

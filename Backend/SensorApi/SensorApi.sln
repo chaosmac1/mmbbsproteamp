@@ -1,8 +1,14 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SensorApi", "SensorApi\SensorApi.csproj", "{3EF47502-E3E1-430F-806D-EE6E9B24EA6A}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Sensor.Api", "Sensor.Api\Sensor.Api.csproj", "{3EF47502-E3E1-430F-806D-EE6E9B24EA6A}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SensorLib", "SensorLib\SensorLib.csproj", "{1264809F-D985-42B7-82EF-C28F89CD807B}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Sensor.Core", "Sensor.Core\Sensor.Core.csproj", "{1264809F-D985-42B7-82EF-C28F89CD807B}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Sensor", "Sensor\Sensor.csproj", "{43EDDA90-D4BD-401E-BE83-CB5A81AEA504}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Sensor.Domain", "Sensor.Domain\Sensor.Domain.csproj", "{944BFEEB-7E76-4756-AE00-842DE42C9FFD}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Sensor.Service", "Sensor.Service\Sensor.Service.csproj", "{1C522BE3-3EE5-439F-BED8-AFD61C872314}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -18,5 +24,17 @@ Global
 		{1264809F-D985-42B7-82EF-C28F89CD807B}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{1264809F-D985-42B7-82EF-C28F89CD807B}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{1264809F-D985-42B7-82EF-C28F89CD807B}.Release|Any CPU.Build.0 = Release|Any CPU
+		{43EDDA90-D4BD-401E-BE83-CB5A81AEA504}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{43EDDA90-D4BD-401E-BE83-CB5A81AEA504}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{43EDDA90-D4BD-401E-BE83-CB5A81AEA504}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{43EDDA90-D4BD-401E-BE83-CB5A81AEA504}.Release|Any CPU.Build.0 = Release|Any CPU
+		{944BFEEB-7E76-4756-AE00-842DE42C9FFD}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{944BFEEB-7E76-4756-AE00-842DE42C9FFD}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{944BFEEB-7E76-4756-AE00-842DE42C9FFD}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{944BFEEB-7E76-4756-AE00-842DE42C9FFD}.Release|Any CPU.Build.0 = Release|Any CPU
+		{1C522BE3-3EE5-439F-BED8-AFD61C872314}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{1C522BE3-3EE5-439F-BED8-AFD61C872314}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{1C522BE3-3EE5-439F-BED8-AFD61C872314}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{1C522BE3-3EE5-439F-BED8-AFD61C872314}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 EndGlobal
