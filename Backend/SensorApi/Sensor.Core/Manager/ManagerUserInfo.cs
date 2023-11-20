@@ -29,4 +29,13 @@ public static class ManagerUserInfo {
     public static async Task InsertAsync(NpgsqlConnection db, UserInfo userInfo) {
         await QueryUserInfo.InsertAsync(db, Parse.ToPocoUserInfo(userInfo));
     }
+    
+    public static async Task<Option<UserInfo>> GetUserInfoIsTokenUserIsAdminAsync(NpgsqlConnection db, UserId userId) {
+        var userInfo = await ManagerUserInfo.FindByIdAsync(db, userId );
+        if (userInfo.IsNotSet() || !userInfo.Unwrap().IsAdmin) {
+            return Option<UserInfo>.Empty;
+        }
+
+        return userInfo;
+    }
 }

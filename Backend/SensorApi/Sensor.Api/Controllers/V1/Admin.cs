@@ -111,8 +111,16 @@ public class Admin : ControllerExtensions {
     }
     
     [HttpPost("/V1/Admin/User/SetPassword")]
-    [ProducesResponseType(StatusCodes.Status200OK, Type = typeof(ViewBody<ViewWork>))]
+    [ProducesResponseType(StatusCodes.Status200OK, Type = typeof(ViewBody<ViewUserInfo>))]
     public async Task<IActionResult> AdminUserSetPassword([FromBody] PostAdminSetUserPassword post) {
-                    
+        var service = new AttachmentService<
+            IInputAdminSetUserPassword,     // Input
+            DtoInputAdminSetUserPassword,   // Dto
+            HandlerAdminUserSetPassword, // Handler
+            IBody<IUserInfo>       // HandlerOutput            
+        >();
+        StatusOutput<IBody<IUserInfo>> value = await service.RunAsync(post, this.ApiProxyFactory(), true);
+        var result = this.ToIActionResult<ViewUserInfos, IUserInfo>(value);
+        return result;
     }
 }

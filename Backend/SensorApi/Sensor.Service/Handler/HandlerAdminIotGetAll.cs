@@ -19,7 +19,9 @@ public struct HandlerAdminIotGetAll: IHandler<DtoInputNone, IBody<IIotInfos>> {
         Option<UserIdAndToken> token) {
 
         var db = dbWrapper.Db;
-        var userInfo = await ManagerUserInfo.FindByIdAsync(db, token.Unwrap().UserId );
+
+        var userInfo = await ManagerUserInfo.GetUserInfoIsTokenUserIsAdminAsync(db, token.Unwrap().UserId);
+        
         if (userInfo.IsNotSet()) {
             return StatusOutput<IBody<IIotInfos>>
                 .AsBadRequestWithMessage(DtoBody<IIotInfos>.HasError(Error.UserNotFoundByCookie));
