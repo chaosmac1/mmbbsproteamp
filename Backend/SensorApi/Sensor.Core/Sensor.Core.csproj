@@ -9,18 +9,19 @@
     </PropertyGroup>
 
     <ItemGroup>
-      <PackageReference Include="BCrypt.Net-Next" Version="4.0.3" />
-      <PackageReference Include="Dapper" Version="2.1.21" />
-      <PackageReference Include="Microsoft.AspNetCore.OpenApi" Version="8.0.0" />
-      <PackageReference Include="NetEscapades.EnumGenerators" Version="1.0.0-beta08" />
-      <PackageReference Include="Riok.Mapperly" Version="3.2.0" />
-      <PackageReference Include="LamLibAllOver" Version="2.17.0" />
+        <PackageReference Include="BCrypt.Net-Next" Version="4.0.3" />
+        <PackageReference Include="Dapper" Version="2.1.21" />
+        <PackageReference Include="Microsoft.AspNetCore.OpenApi" Version="8.0.0" />
+        <PackageReference Include="NetEscapades.EnumGenerators" Version="1.0.0-beta08" />
+        <PackageReference Include="Riok.Mapperly" Version="3.2.0" />
+        <PackageReference Include="LamLibAllOver" Version="2.17.0" />
+        <PackageReference Include="BCrypt.Net-Next" Version="4.0.3"/>
     </ItemGroup>
 
     <ItemGroup>
-      <ProjectReference Include="..\Sensor.Domain\Sensor.Domain.csproj" />
-      <ProjectReference Include="..\Sensor.Log\Sensor.Log.csproj" />
-      <ProjectReference Include="..\Sensor.Repository\Sensor.Repository.csproj" />
+        <ProjectReference Include="..\Sensor.Domain\Sensor.Domain.csproj" />
+        <ProjectReference Include="..\Sensor.Log\Sensor.Log.csproj" />
+        <ProjectReference Include="..\Sensor.Repository\Sensor.Repository.csproj" />
     </ItemGroup>
 
 </Project>

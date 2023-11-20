@@ -21,4 +21,12 @@ public static class ManagerUserInfo {
     public static async Task DeleteByIdAsync(NpgsqlConnection db, UserId id) {
         await QueryUserInfo.DeleteByIdAsync(db, id.Value);
     }
+
+    public static async Task<List<UserInfo>> GetAllAsync(NpgsqlConnection db) {
+        return (await QueryUserInfo.GetAll(db)).Select(Parse.ToDomainUserInfo).AsList();
+    }
+
+    public static async Task InsertAsync(NpgsqlConnection db, UserInfo userInfo) {
+        await QueryUserInfo.InsertAsync(db, Parse.ToPocoUserInfo(userInfo));
+    }
 }
