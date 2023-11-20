@@ -12,6 +12,7 @@
       <PackageReference Include="NLog.Database" Version="5.2.5" />
       <PackageReference Include="NLog.Web" Version="5.3.5" />
       <PackageReference Include="NLog.Web.AspNetCore" Version="5.3.5" />
+      <PackageReference Include="Npgsql" Version="8.0.0-rc.2" />
     </ItemGroup>
 
     <ItemGroup>
