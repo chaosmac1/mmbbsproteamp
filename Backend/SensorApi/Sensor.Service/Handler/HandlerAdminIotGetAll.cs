@@ -11,9 +11,9 @@ using Sensor.Service.Port.Interface;
 
 namespace Sensor.Service.Handler; 
 
-public struct HandlerGetAllIotInfos: IHandler<DtoNone, IBody<IIotInfos>> {
+public struct HandlerAdminIotGetAll: IHandler<DtoInputNone, IBody<IIotInfos>> {
     public async Task<StatusOutput<IBody<IIotInfos>>> HandlingAsync(
-        DtoNone prop, 
+        DtoInputNone prop, 
         IDbWrapper dbWrapper, 
         IApiProxy apiProxy, 
         Option<UserIdAndToken> token) {
@@ -23,6 +23,10 @@ public struct HandlerGetAllIotInfos: IHandler<DtoNone, IBody<IIotInfos>> {
         if (userInfo.IsNotSet()) {
             return StatusOutput<IBody<IIotInfos>>
                 .AsBadRequestWithMessage(DtoBody<IIotInfos>.HasError(Error.UserNotFoundByCookie));
+        }
+
+        if (!userInfo.Unwrap().IsAdmin) {
+            return StatusOutput<IBody<IIotInfos>>.AsOk(DtoBody<IIotInfos>.HasError(Error.UserIsNotAdmin));
         }
         
         var result = (await ManagerIotDevice.AllAsync(db)).Select(x => (DtoIotInfo)x).AsList();

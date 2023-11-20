@@ -25,6 +25,10 @@ public struct HandlerIotDelete: IHandler<DtoInputAdminIotDelete, IBody<IIotInfos
                 .AsBadRequestWithMessage(DtoBody<IIotInfos>.HasError(Error.UserNotFoundByCookie));
         }
         
+        if (!userInfo.Unwrap().IsAdmin) {
+            return StatusOutput<IBody<IIotInfos>>.AsOk(DtoBody<IIotInfos>.HasError(Error.UserIsNotAdmin));
+        }
+        
         await ManagerIotDevice.DeleteByIdAsync(db, new IotId { Value = prop.IotId });
         var result = (await ManagerIotDevice.AllAsync(db)).Select(x => (DtoIotInfo)x).AsList();
 

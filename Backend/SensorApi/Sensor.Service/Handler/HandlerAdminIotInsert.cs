@@ -26,6 +26,10 @@ public struct HandlerAdminIotInsert: IHandler<DtoInputAdminIotInsert, IBody<IIot
                 .AsBadRequestWithMessage(DtoBody<IIotInfos>.HasError(Error.UserNotFoundByCookie));
         }
 
+        if (!userInfo.Unwrap().IsAdmin) {
+            return StatusOutput<IBody<IIotInfos>>.AsOk(DtoBody<IIotInfos>.HasError(Error.UserIsNotAdmin));
+        }
+        
         var exit = (await ManagerIotDevice.FindByNameAsync(db, prop.Name)).IsSet();
 
         if (exit) {

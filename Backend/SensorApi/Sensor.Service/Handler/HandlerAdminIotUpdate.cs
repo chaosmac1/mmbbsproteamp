@@ -26,7 +26,11 @@ public struct HandlerAdminIotUpdate: IHandler<DtoInputAdminIotUpdate, IBody<IIot
                 .AsBadRequestWithMessage(DtoBody<IIotInfos>.HasError(Error.UserNotFoundByCookie));
         }
 
-        var updateTargetOp = await ManagerIotDevice.FindByIdAsync(db, prop.Id);
+        if (!userInfo.Unwrap().IsAdmin) {
+            return StatusOutput<IBody<IIotInfos>>.AsOk(DtoBody<IIotInfos>.HasError(Error.UserIsNotAdmin));
+        }
+        
+        var updateTargetOp = await ManagerIotDevice.FindByIdAsync(db, new () { Value = prop.IotId });
         if (updateTargetOp.IsNotSet()) {
             return StatusOutput<IBody<IIotInfos>>
                 .AsBadRequestWithMessage(DtoBody<IIotInfos>.HasError(Error.UpdateTargetNotFound));
