@@ -29,7 +29,7 @@ public static partial class Mapper {
                 ISensorDatas @a => ToView(@a),
                 IUserInfo @a => ToView(@a),
                 IUserInfos @a => ToView(@a),
-                IUserLogin @a => ToView(@a),
+                IUserLoginStatus @a => ToView(@a),
                 IValid @a => ToView(@a),
                 IWork @a => ToView(@a),
                 _ => throw new ArgumentOutOfRangeException()
@@ -48,7 +48,7 @@ public static partial class Mapper {
         };
     }
     public static partial ViewIotInfos     ToView(IIotInfos value);
-    public static partial ViewIotLogin     ToView(IIotLogin value);
+    public static partial ViewIotLoginJwtAndStatus     ToView(IIotLogin value);
     public static partial ViewIotName      ToView(IIotName value);
     public static partial ViewIotUpdate    ToView(IIotUpdate value);
 
@@ -62,7 +62,7 @@ public static partial class Mapper {
     public static ViewUserInfos ToView(IUserInfos value) {
         return new () { List = value.List.Select(ToView).ToList()  };
     }
-    public static partial ViewUserLogin    ToView(IUserLogin value);
+    public static partial ViewUserLogin    ToView(IUserLoginStatus value);
     public static partial ViewValid        ToView(IValid value);
     public static partial ViewWork         ToView(IWork value);
 }

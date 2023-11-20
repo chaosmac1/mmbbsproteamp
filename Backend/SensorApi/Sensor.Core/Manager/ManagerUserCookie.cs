@@ -27,4 +27,8 @@ public static class ManagerUserCookie {
     public static async Task DeleteByIdAsync(NpgsqlConnection db, UserToken userToken) {
         await QueryUserCookie.DeleteByIdAsync(db, userToken.Value);
     }
+
+    public static async Task InsertAsync(NpgsqlConnection db, UserCookie userCookie) {
+        await QueryUserCookie.InsertAsync(db, Parse.ToPocoUserCookie(userCookie));
+    }
 }

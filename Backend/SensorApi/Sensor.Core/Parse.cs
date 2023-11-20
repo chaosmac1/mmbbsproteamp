@@ -1,3 +1,5 @@
+using UserCookie = Sensor.Repository.Database.Poco.UserCookie;
+
 namespace Sensor.Core; 
 
 internal static class Parse {
@@ -32,6 +34,14 @@ internal static class Parse {
             Username = value.username??"",
             IsAdmin = value.is_admin,
             PasswordHash = value.password_hash??"",
+        };
+    }
+
+    public static Sensor.Repository.Database.Poco.UserCookie ToPocoUserCookie(Sensor.Domain.Entity.UserCookie value) {
+        return new UserCookie {
+            id =  value.Id.Value,
+            user_id = value.UserId.Value,
+            end_datetime = value.EndDateTime
         };
     }
 }

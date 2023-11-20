@@ -10,8 +10,7 @@ using Sensor.Service.Port.Interface;
 namespace Sensor.Service.AttachmentService.Interface;
 
 public interface IHandler<HandlerInput, HandlerOutput>
-    where HandlerInput: IDto
-    where HandlerOutput: IHandlerOutput {
+    where HandlerInput: IDto {
     public Task<StatusOutput<HandlerOutput>> HandlingAsync(
         HandlerInput prop,  
         IDbWrapper dbWrapper, 

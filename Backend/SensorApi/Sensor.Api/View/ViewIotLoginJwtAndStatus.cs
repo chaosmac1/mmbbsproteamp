@@ -4,7 +4,7 @@ using Sensor.Domain.ValueObject;
 
 namespace Sensor.Api.View; 
 
-public class ViewIotLogin: IView {
+public class ViewIotLoginJwtAndStatus: IView {
     public required string Status { get; set; }
     public required IotToken Token { get; set; }
 }

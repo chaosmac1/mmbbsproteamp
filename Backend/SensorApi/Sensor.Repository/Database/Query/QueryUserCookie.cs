@@ -40,4 +40,17 @@ DELETE FROM user_cookie
 WHERE id = @id
 ");
     }
+
+    public static async Task InsertAsync(NpgsqlConnection db, UserCookie userCookie) {
+        await db.ExecuteAsync(@"
+INSERT INTO user_cookie 
+    (id, user_id, end_datetime)
+VALUES 
+    (@id, @user_id, @end_datetime)
+", new {
+            id = userCookie.id, 
+            user_id = userCookie.user_id, 
+            end_datetime = userCookie.end_datetime
+        });
+    }
 }
