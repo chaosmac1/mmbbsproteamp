@@ -8,9 +8,7 @@ public struct AttachmentService<
     Input, 
     Dto,
     Handler,
-    HandlerOutput> 
-    where Input: IInput
-    where Dto: IDto, IDtoFrom<Dto, Input>
+    HandlerOutput> where Dto: IDto, IDtoFrom<Dto, Input>
     where HandlerOutput: IHandlerOutput
     where Handler: IHandler<Dto, HandlerOutput>, new() {
     
