@@ -35,7 +35,13 @@ DELETE FROM user_info WHERE id = @id
 ", new { id = id });
     }
 
-    public static async Task Insert(NpgsqlConnection db, UserInfo userInfo) {
-        
+    public static async Task InsertAsync(NpgsqlConnection db, UserInfo userInfo) {
+        throw new NullReferenceException(nameof(InsertAsync));
+    }
+
+    public static async Task<IEnumerable<Poco.UserInfo>> GetAll(NpgsqlConnection db) {
+        return await db.QueryAsync<Poco.UserInfo>(@"
+SELECT * FROM user_info;
+");
     }
 }
