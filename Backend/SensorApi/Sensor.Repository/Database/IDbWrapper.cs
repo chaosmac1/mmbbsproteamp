@@ -1,6 +1,6 @@
 using Npgsql;
 
-namespace Sensor.Domain.Interface; 
+namespace Sensor.Repository.Database; 
 
 public interface IDbWrapper: IAsyncDisposable {
     public Npgsql.NpgsqlConnection Db { get; }

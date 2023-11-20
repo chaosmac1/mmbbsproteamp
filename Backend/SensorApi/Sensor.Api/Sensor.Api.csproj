@@ -9,12 +9,20 @@
     </PropertyGroup>
 
     <ItemGroup>
-        <PackageReference Include="Microsoft.AspNetCore.OpenApi" Version="8.0.0-rc.2.23480.2"/>
+        <PackageReference Include="Microsoft.AspNetCore.OpenApi" Version="8.0.0"/>
         <PackageReference Include="Swashbuckle.AspNetCore" Version="6.5.0"/>
     </ItemGroup>
 
     <ItemGroup>
+      <ProjectReference Include="..\Sensor.Db\Sensor.Db.csproj" />
+      <ProjectReference Include="..\Sensor.Log\Sensor.Log.csproj" />
       <ProjectReference Include="..\Sensor.Service\Sensor.Service.csproj" />
     </ItemGroup>
 
+    <ItemGroup>
+      <None Include="appsettings.Development.json" />
+      <None Include="appsettings.json">
+        <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+      </None>
+    </ItemGroup>
 </Project>

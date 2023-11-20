@@ -1,6 +1,6 @@
 using System.Diagnostics.CodeAnalysis;
 
-namespace Sensor.Db.Poco; 
+namespace Sensor.Repository.Database.Poco;
 
 [SuppressMessage("ReSharper", "InconsistentNaming")]
 public class UserInfo {

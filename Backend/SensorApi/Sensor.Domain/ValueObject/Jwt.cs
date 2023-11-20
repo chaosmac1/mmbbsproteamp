@@ -18,10 +18,10 @@ public class Jwt: Model.ValueObject {
         IJsonSerializer serializer = new JsonNetSerializer();
         IBase64UrlEncoder urlEncoder = new JwtBase64UrlEncoder();
         IJwtDecoder decoder = new JwtDecoder(serializer, urlEncoder);
-        var key = Sensor.Domain.Env.JwtKey; 
+        var key =  Sensor.Env.Env.JwtKey; 
         var dictionary = decoder.DecodeHeaderToDictionary(key);
 
-        var id = new IotId { Value = dictionary["Id.Value"] };
+        var id = new IotId { Value = Guid.Parse(dictionary["Id.Value"]) };
         var endDate = DateTime.FromBinary(long.Parse(dictionary["EndDate"]));
         
         var jwt = new Jwt {
@@ -43,7 +43,7 @@ public class Jwt: Model.ValueObject {
         IJsonSerializer serializer = new JsonNetSerializer();
         IBase64UrlEncoder urlEncoder = new JwtBase64UrlEncoder();
         IJwtEncoder encoder = new JwtEncoder(algorithm, serializer, urlEncoder);
-        var key = Sensor.Domain.Env.JwtKey;
+        var key = Sensor.Env.Env.JwtKey;
 
         var jwt = encoder.Encode(payload, key);
         return jwt;

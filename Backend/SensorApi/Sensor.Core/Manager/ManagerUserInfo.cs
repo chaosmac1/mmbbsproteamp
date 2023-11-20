@@ -1,0 +1,24 @@
+using Dapper;
+using LamLibAllOver;
+using Npgsql;
+using Sensor.Repository.Database.Query;
+
+namespace Sensor.Core.Manager; 
+
+public static class ManagerUserInfo {
+    public static async Task<Option<Entity.UserInfo>> FindByIdAsync(NpgsqlConnection db, UserId id) {
+        return (await QueryUserInfo.FindByIdAsync(db, id.Value)).Map(Parse.ToDomainUserInfo);
+    }
+
+    public static async Task<Option<Entity.UserInfo>> FindByUsernameAsync(NpgsqlConnection db, string username) {
+        return (await QueryUserInfo.FindByUsernameAsync(db, username)).Map(Parse.ToDomainUserInfo);
+    }
+
+    public static async Task UpdateByIdAsync(NpgsqlConnection db, UserInfo userInfo) {
+        await QueryUserInfo.UpdateByIdAsync(db, Parse.ToPocoUserInfo(userInfo));
+    }
+
+    public static async Task DeleteByIdAsync(NpgsqlConnection db, UserId id) {
+        await QueryUserInfo.DeleteByIdAsync(db, id.Value);
+    }
+}

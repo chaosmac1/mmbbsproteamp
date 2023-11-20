@@ -1,3 +1,4 @@
+using Sensor.Domain.Entity;
 using Sensor.Service.AttachmentService.Interface;
 using Sensor.Service.Port.Interface;
 
@@ -11,4 +12,6 @@ public class DtoIotInfos: IHandlerOutput, IDto, IDtoFrom<DtoIotInfos, IIotInfos>
             List = from.List.Select(DtoIotInfo.From).ToList()
         };
     }
+
+    public IIotInfos AsIIotInfos() => (IIotInfos)this;
 }

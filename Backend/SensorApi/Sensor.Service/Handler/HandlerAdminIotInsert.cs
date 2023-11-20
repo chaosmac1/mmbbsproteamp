@@ -1,5 +1,6 @@
 using Dapper;
 using LamLibAllOver;
+using Npgsql;
 using Sensor.Domain;
 using Sensor.Domain.Entity;
 using Sensor.Domain.ValueObject;
@@ -11,9 +12,9 @@ using Sensor.Service.Port.Interface;
 
 namespace Sensor.Service.Handler; 
 
-public struct HandlerIotDelete: IHandler<DtoInputAdminIotDelete, IBody<IIotInfos>> {
+public struct HandlerAdminIotInsert: IHandler<DtoInputAdminIotInsert, IBody<IIotInfos>> {
     public async Task<StatusOutput<IBody<IIotInfos>>> HandlingAsync(
-        DtoInputAdminIotDelete prop, 
+        DtoInputAdminIotInsert prop, 
         IDbWrapper dbWrapper, 
         IApiProxy apiProxy, 
         Option<UserIdAndToken> token) {
@@ -24,8 +25,19 @@ public struct HandlerIotDelete: IHandler<DtoInputAdminIotDelete, IBody<IIotInfos
             return StatusOutput<IBody<IIotInfos>>
                 .AsBadRequestWithMessage(DtoBody<IIotInfos>.HasError(Error.UserNotFoundByCookie));
         }
+
+        var exit = (await ManagerIotDevice.FindByNameAsync(db, prop.Name)).IsSet();
+
+        if (exit) {
+            return StatusOutput<IBody<IIotInfos>>.AsOk(DtoBody<IIotInfos>.HasError(Error.IotNameExist));
+        }
         
-        await ManagerIotDevice.DeleteByIdAsync(db, new IotId { Value = prop.IotId });
+        await ManagerIotDevice.InsertIotDeviceAsync(db, new IotDevice(new IotId() { Value = Guid.NewGuid() }) {
+            Name = prop.Name,
+            AllowedRequest = true,
+            LastRequest = DateTime.UtcNow,
+        });
+        
         var result = (await ManagerIotDevice.AllAsync(db)).Select(x => (DtoIotInfo)x).AsList();
 
         var body = DtoBody<IIotInfos>.NoError(new DtoIotInfos { List = result });

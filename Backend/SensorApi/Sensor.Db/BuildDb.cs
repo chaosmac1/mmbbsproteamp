@@ -1,4 +1,5 @@
 using Npgsql;
+using Sensor.Repository.Database;
 
 namespace Sensor.Db; 
 
@@ -23,7 +24,7 @@ public static class BuildDb {
         _npgsqlConnectionWithMultiplexingString = SettingsBuilder().ConnectionString;
     }
 
-    private static NpgsqlConnectionStringBuilder SettingsBuilder(bool multiplexing = true) {
+    public static NpgsqlConnectionStringBuilder SettingsBuilder(bool multiplexing = true) {
         var connStringBuilder = new NpgsqlConnectionStringBuilder();
         connStringBuilder.Host         = Setting.Host; 
         connStringBuilder.Port         = Setting.Port; 

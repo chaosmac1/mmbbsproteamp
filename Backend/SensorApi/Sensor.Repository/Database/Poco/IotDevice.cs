@@ -1,5 +1,8 @@
-namespace Sensor.Db.Poco; 
+using System.Diagnostics.CodeAnalysis;
 
+namespace Sensor.Repository.Database.Poco;
+
+[SuppressMessage("ReSharper", "InconsistentNaming")]
 public class IotDevice {
     public Guid id { get; set; }
     public string? name { get; set; }

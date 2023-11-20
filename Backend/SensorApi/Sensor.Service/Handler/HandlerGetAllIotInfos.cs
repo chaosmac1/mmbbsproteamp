@@ -11,9 +11,9 @@ using Sensor.Service.Port.Interface;
 
 namespace Sensor.Service.Handler; 
 
-public struct HandlerIotDelete: IHandler<DtoInputAdminIotDelete, IBody<IIotInfos>> {
+public struct HandlerGetAllIotInfos: IHandler<DtoNone, IBody<IIotInfos>> {
     public async Task<StatusOutput<IBody<IIotInfos>>> HandlingAsync(
-        DtoInputAdminIotDelete prop, 
+        DtoNone prop, 
         IDbWrapper dbWrapper, 
         IApiProxy apiProxy, 
         Option<UserIdAndToken> token) {
@@ -25,7 +25,6 @@ public struct HandlerIotDelete: IHandler<DtoInputAdminIotDelete, IBody<IIotInfos
                 .AsBadRequestWithMessage(DtoBody<IIotInfos>.HasError(Error.UserNotFoundByCookie));
         }
         
-        await ManagerIotDevice.DeleteByIdAsync(db, new IotId { Value = prop.IotId });
         var result = (await ManagerIotDevice.AllAsync(db)).Select(x => (DtoIotInfo)x).AsList();
 
         var body = DtoBody<IIotInfos>.NoError(new DtoIotInfos { List = result });

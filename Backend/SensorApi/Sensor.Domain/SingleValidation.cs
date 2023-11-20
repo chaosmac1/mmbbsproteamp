@@ -1,9 +1,9 @@
 namespace Sensor.Domain; 
 
 public static class SingleValidation {
-    public static bool IotIdIsNotValid(string? iotId) {
-        if (iotId is null) return true;
-        if (iotId.Length <= 2) return true;
+    public static bool IotNameIsNotValid(string? name) {
+        if (name is null) return true;
+        if (name.Length <= 2) return true;
         
         return false;
     }

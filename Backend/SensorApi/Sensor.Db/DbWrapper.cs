@@ -1,5 +1,5 @@
 using Npgsql;
-using Sensor.Domain.Interface;
+using Sensor.Repository.Database;
 
 namespace Sensor.Db; 
 

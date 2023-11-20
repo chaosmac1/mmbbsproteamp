@@ -1,5 +1,5 @@
 using env = Sensor.Env.Env;
-namespace Sensor.Db; 
+namespace Sensor.Log; 
 
 internal static class Setting {
     public static string  Host     = env.DbIp;
@@ -8,7 +8,7 @@ internal static class Setting {
     public static string  Username = env.DbUsername;
     public static string  Database = env.DbDatabase;
     public static bool    Pooling  = true;
-    public static int     MaxPoolSize = 3000;
-    public static int     MinPoolSize = 100;
+    public static int     MaxPoolSize = 10;
+    public static int     MinPoolSize = 1;
     public static int     Timeout = 1024;
 }

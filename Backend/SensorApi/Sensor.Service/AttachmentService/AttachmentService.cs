@@ -1,12 +1,6 @@
-using System.Diagnostics.CodeAnalysis;
 using LamLibAllOver;
-using Sensor.Db;
-using Sensor.Domain.Entity;
-using Sensor.Domain.ValueObject;
 using Sensor.Service.AttachmentService.Interface;
-using Sensor.Service.Dto;
 using Sensor.Service.Port;
-using Sensor.Service.Port.Interface;
 
 namespace Sensor.Service.AttachmentService;
 
@@ -67,7 +61,8 @@ public struct AttachmentService<
         }
 
         var handler = new Handler();
-        var dbWrapper = await DbWrapper.FactoryAsync();
+        
+        var dbWrapper = await Sensor.Repository.Database.Builder.BuildDbWrapper();
         
         try {
             Option<Sensor.Domain.ValueObject.UserIdAndToken> cookieAndUserId = default;
@@ -77,8 +72,8 @@ public struct AttachmentService<
                     await dbWrapper.RollbackAsync();    
                     return StatusOutput<HandlerOutput>.AsForbidden();
                 }
-
-                Option<UserCookie> userCookieOp = await Core.Manager.ManagerUserCookie.GetByIdAsync(
+                
+                var userCookieOp = await Sensor.Core.Manager.ManagerUserCookie.GetByIdAsync(
                     dbWrapper.Db, 
                     new () { Value = cookieOp.Unwrap().Value }
                 );

@@ -1,7 +1,6 @@
 ﻿using LamLibAllOver;
-using Sensor.Domain.Interface;
+using Sensor.Repository.Database;
 using Sensor.Service.Port; 
-using Sensor.Service.Port.Interface;
 
 namespace Sensor.Service.AttachmentService.Interface;
 

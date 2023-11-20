@@ -23,27 +23,27 @@ public static class ValidationParser {
     }
 
     private static bool Valid(IInputAdminIotDelete value) {
-        if (SingleValidation.IotIdIsNotValid(value.IotId)) return false;
+        if (value.IotId == Guid.Empty) return false;
 
         return true;
     }
 
     private static bool Valid(IInputAdminIotInsert value) {
-        if (SingleValidation.IotIdIsNotValid(value.IotId)) return false;
+        if (SingleValidation.IotNameIsNotValid(value.Name)) return false;
 
         return true;
     }
 
     private static bool Valid(IInputAdminIotUpdate<ICanNull<string>> value) {
-        if (SingleValidation.IotIdIsNotValid(value.IotId)) return false;
-        if (!Valid(value.UpdateId, SingleValidation.IotIdIsNotValid)) return false;
+        if (value.IotId == Guid.Empty) return false;
+        if (!Valid(value.UpdateId, SingleValidation.IotNameIsNotValid)) return false;
 
         return true;
     }
 
     private static bool Valid(IInputAdminSetUserPassword value) {
         if (SingleValidation.PasswordIsNotValid(value.Password)) return false;
-        if (value.UserId == default) return false;
+        if (value.UserId == Guid.Empty) return false;
 
         return true;
     }
@@ -63,7 +63,7 @@ public static class ValidationParser {
 
     private static bool Valid(IInputIotLogin value) {
         if (SingleValidation.PasswordIsNotValid(value.Password)) return false;
-        if (SingleValidation.IotIdIsNotValid(value.IotName)) return false;
+        if (SingleValidation.IotNameIsNotValid(value.IotName)) return false;
 
         return true;
     }
@@ -82,7 +82,7 @@ public static class ValidationParser {
     }
 
     private static bool Valid(IInputUserId value) {
-        if (value.UserId == default) return false;
+        if (value.UserId == Guid.Empty) return false;
 
         return true;
     }

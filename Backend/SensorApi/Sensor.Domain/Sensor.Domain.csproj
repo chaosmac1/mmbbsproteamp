@@ -8,9 +8,12 @@
     </PropertyGroup>
 
     <ItemGroup>
-        <PackageReference Include="Npgsql" Version="8.0.0-rc.2" />
+<!--        <PackageReference Include="Npgsql" Version="8.0.0-rc.2" />-->
         <PackageReference Include="JWT" Version="10.1.1" />
-        <PackageReference Include="Microsoft.AspNetCore.OpenApi" Version="8.0.0-rc.2.23480.2" />
+    </ItemGroup>
+
+    <ItemGroup>
+      <ProjectReference Include="..\Sensor.Env\Sensor.Env.csproj" />
     </ItemGroup>
 
 </Project>
