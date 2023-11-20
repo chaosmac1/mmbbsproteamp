@@ -10,7 +10,7 @@ public static class ValidationParser {
         return dto switch {
             IInputAdminIotDelete @v => Valid(@v), 
             IInputAdminIotInsert @v => Valid(@v), 
-            IInputAdminIotUpdate<ICanNull<string>> @v => Valid(@v), 
+            IInputAdminIotUpdate @v => Valid(@v), 
             IInputAdminSetUserPassword @v => Valid(@v), 
             IAmount @v => Valid(@v), 
             IInputIotLogin @v => Valid(@v), 
@@ -18,6 +18,7 @@ public static class ValidationParser {
             IInputUserAdd @v => Valid(@v), 
             IInputUserId @v => Valid(@v), 
             IInputUserLogin @v => Valid(@v),
+            IInputNone @v => true,
             _ => throw new ArgumentOutOfRangeException(nameof(dto), dto, null)
         };
     }
@@ -34,10 +35,10 @@ public static class ValidationParser {
         return true;
     }
 
-    private static bool Valid(IInputAdminIotUpdate<ICanNull<string>> value) {
+    private static bool Valid(IInputAdminIotUpdate value) {
         if (value.IotId == Guid.Empty) return false;
-        if (!Valid(value.UpdateId, SingleValidation.IotNameIsNotValid)) return false;
-
+        if (SingleValidation.IotNameIsNotValid(value.Name)) return false;
+        
         return true;
     }
 

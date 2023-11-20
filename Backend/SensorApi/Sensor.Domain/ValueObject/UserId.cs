@@ -5,4 +5,6 @@ public class UserId: Model.ValueObject {
     internal override IEnumerable<object> GetEquality() {
         yield return Value;
     }
+
+    public static UserId NewUserId() => new UserId() {Value = Guid.NewGuid()};
 }
