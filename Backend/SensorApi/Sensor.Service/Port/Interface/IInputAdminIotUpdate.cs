@@ -1,7 +1,9 @@
+using Sensor.Service.AttachmentService.Interface;
+
 namespace Sensor.Service.Port.Interface;
 
-public interface IInputAdminIotUpdate<T> where T: ICanNull<string> {
+public interface IInputAdminIotUpdate: IInput {
     public Guid IotId { get; }
-    public T UpdateId { get; }
+    public string Name { get; }
     public bool AllowedRequest { get; }
 }
