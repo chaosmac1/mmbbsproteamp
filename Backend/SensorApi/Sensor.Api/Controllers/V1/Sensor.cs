@@ -19,12 +19,12 @@ public class Sensor : ControllerExtensions {
         var service = new AttachmentService<
             IAmount,                // Input
             DtoAmount,  // Dto
-            HandlerSensorAddTemp,   // Handler
-            IBody<ISensorData>      // HandlerOutput            
+            HandlerSensorGetData,   // Handler
+            IBody<ISensorDatas>      // HandlerOutput            
         >();
         
-        StatusOutput<IBody<ISensorData>> value = await service.RunAsync(post, this.ApiProxyFactory(), true);
-        var result = this.ToIActionResult<ViewSensorData, ISensorData>(value);
+        StatusOutput<IBody<ISensorDatas>> value = await service.RunAsync(post, this.ApiProxyFactory(), true);
+        var result = this.ToIActionResult<ViewSensorData, ISensorDatas>(value);
         return result;
     }
 
