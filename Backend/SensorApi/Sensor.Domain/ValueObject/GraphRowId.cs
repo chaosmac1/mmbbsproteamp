@@ -5,4 +5,6 @@ public class GraphRowId: Model.ValueObject {
     internal override IEnumerable<object> GetEquality() {
         yield return Value;
     }
+
+    public static GraphRowId NewNoId() => new GraphRowId() { Value = -1 };
 }

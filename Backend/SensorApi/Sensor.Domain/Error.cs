@@ -10,4 +10,6 @@ public static class Error {
     public static ErrorInfo UpdateTargetNotFound = new ErrorInfo(new ErrorId(4), "Domain Target Not Found For A Update");
     public static ErrorInfo UserIsNotAdmin = new ErrorInfo(new ErrorId(5), "You Are Not Admin");
     public static ErrorInfo UserWithName = new ErrorInfo(new ErrorId(6), "User With Name Exist");
+    public static ErrorInfo JwtDead = new ErrorInfo(new ErrorId(7), "Jwt No More Valid");
+    public static ErrorInfo IotNotAllowedInsert = new ErrorInfo(new ErrorId(7), "Iot Not Allowed To Insert New Data");
 }

@@ -14,7 +14,7 @@ public class HandlerUserLogout: IHandler<DtoInputNone, IBody<IWork>> {
         IDbWrapper dbWrapper, 
         IApiProxy apiProxy, 
         Option<UserIdAndToken> token) {
-        
-        
+
+        throw new NotImplementedException(nameof(HandlerUserLogout));
     }
 }
