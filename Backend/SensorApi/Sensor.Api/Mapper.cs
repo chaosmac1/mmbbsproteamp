@@ -52,7 +52,12 @@ public static partial class Mapper {
     public static partial ViewIotName      ToView(IIotName value);
     public static partial ViewIotUpdate    ToView(IIotUpdate value);
 
-    public static partial ViewSensorData   ToView(ISensorData value);
+    public static ViewSensorData ToView(ISensorData value) {
+        return new ViewSensorData() {
+            UseDate = value.UseDate.Date,
+            Kelvin = value.Kelvin
+        };
+    }
 
     public static ViewSensorDatas ToView(ISensorDatas value) {
         return new () { SensorDatas = value.SensorDatas.Select(ToView).ToList() };
