@@ -47,10 +47,10 @@ public static partial class Mapper {
             AllowedRequest = value.AllowedRequest,
         };
     }
-    public static partial ViewIotInfos     ToView(IIotInfos value);
-    public static partial ViewIotLoginJwtAndStatus     ToView(IIotLogin value);
-    public static partial ViewIotName      ToView(IIotName value);
-    public static partial ViewIotUpdate    ToView(IIotUpdate value);
+    public static partial ViewIotInfos ToView(IIotInfos value);
+    public static partial ViewIotLoginJwtAndStatus ToView(IIotLogin value);
+    public static partial ViewIotName ToView(IIotName value);
+    public static partial ViewIotUpdate ToView(IIotUpdate value);
 
     public static ViewSensorData ToView(ISensorData value) {
         return new ViewSensorData() {
