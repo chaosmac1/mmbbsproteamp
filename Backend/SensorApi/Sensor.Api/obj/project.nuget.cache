@@ -1,30 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "IsIpgkyCVuj0BThimvlrCMVy4v5a7AAimsGYPLgrI4WJvjW3Mp9SgfP/KmVbNcZ+cKxHspPza1A9Oa9BNVxhNw==",
+  "dgSpecHash": "KXRbG8s4XJht8EFiEA3RWB7pRh2l009n0O+Bl8zGG+cDTHY3tXCJfXl1VYSEO2apB5Qn+JiiDnekvGCNCarVfw==",
   "success": true,
-  "projectFilePath": "/aprojekt/mmbbsprotemp/Backend/SensorApi/Sensor.Api/Sensor.Api.csproj",
-  "expectedPackageFiles": [
-    "/home/chaosmac/.nuget/packages/bcrypt.net-next/4.0.3/bcrypt.net-next.4.0.3.nupkg.sha512",
-    "/home/chaosmac/.nuget/packages/dapper/2.1.21/dapper.2.1.21.nupkg.sha512",
-    "/home/chaosmac/.nuget/packages/jwt/10.1.1/jwt.10.1.1.nupkg.sha512",
-    "/home/chaosmac/.nuget/packages/lamliballover/2.17.0/lamliballover.2.17.0.nupkg.sha512",
-    "/home/chaosmac/.nuget/packages/microsoft.aspnetcore.openapi/8.0.0/microsoft.aspnetcore.openapi.8.0.0.nupkg.sha512",
-    "/home/chaosmac/.nuget/packages/microsoft.extensions.apidescription.server/6.0.5/microsoft.extensions.apidescription.server.6.0.5.nupkg.sha512",
-    "/home/chaosmac/.nuget/packages/microsoft.extensions.dependencyinjection.abstractions/8.0.0-rc.2.23479.6/microsoft.extensions.dependencyinjection.abstractions.8.0.0-rc.2.23479.6.nupkg.sha512",
-    "/home/chaosmac/.nuget/packages/microsoft.extensions.logging.abstractions/8.0.0-rc.2.23479.6/microsoft.extensions.logging.abstractions.8.0.0-rc.2.23479.6.nupkg.sha512",
-    "/home/chaosmac/.nuget/packages/microsoft.openapi/1.4.3/microsoft.openapi.1.4.3.nupkg.sha512",
-    "/home/chaosmac/.nuget/packages/netescapades.enumgenerators/1.0.0-beta08/netescapades.enumgenerators.1.0.0-beta08.nupkg.sha512",
-    "/home/chaosmac/.nuget/packages/newtonsoft.json/13.0.2/newtonsoft.json.13.0.2.nupkg.sha512",
-    "/home/chaosmac/.nuget/packages/npgsql/8.0.0-rc.2/npgsql.8.0.0-rc.2.nupkg.sha512",
-    "/home/chaosmac/.nuget/packages/portable.bouncycastle/1.9.0/portable.bouncycastle.1.9.0.nupkg.sha512",
-    "/home/chaosmac/.nuget/packages/riok.mapperly/3.2.0/riok.mapperly.3.2.0.nupkg.sha512",
-    "/home/chaosmac/.nuget/packages/swashbuckle.aspnetcore/6.5.0/swashbuckle.aspnetcore.6.5.0.nupkg.sha512",
-    "/home/chaosmac/.nuget/packages/swashbuckle.aspnetcore.swagger/6.5.0/swashbuckle.aspnetcore.swagger.6.5.0.nupkg.sha512",
-    "/home/chaosmac/.nuget/packages/swashbuckle.aspnetcore.swaggergen/6.5.0/swashbuckle.aspnetcore.swaggergen.6.5.0.nupkg.sha512",
-    "/home/chaosmac/.nuget/packages/swashbuckle.aspnetcore.swaggerui/6.5.0/swashbuckle.aspnetcore.swaggerui.6.5.0.nupkg.sha512",
-    "/home/chaosmac/.nuget/packages/system.runtime.compilerservices.unsafe/6.0.0/system.runtime.compilerservices.unsafe.6.0.0.nupkg.sha512",
-    "/home/chaosmac/.nuget/packages/system.text.encodings.web/6.0.0/system.text.encodings.web.6.0.0.nupkg.sha512",
-    "/home/chaosmac/.nuget/packages/system.text.json/6.0.7/system.text.json.6.0.7.nupkg.sha512"
-  ],
+  "projectFilePath": "C:\\Users\\TestBenutzer\\Desktop\\LF7\\mmbbsprotemp\\Backend\\SensorApi\\Sensor.Api\\Sensor.Api.csproj",
+  "expectedPackageFiles": [],
   "logs": []
 }
