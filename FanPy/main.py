@@ -1,41 +1,36 @@
 import RPi.GPIO as GPIO
 import time
-import sys
+GPIO.setmode(GPIO.BCM)
+Motor1A= 23
+Motor2A = 24
+Motor1EN = 25
 
-En1Pin = 3
-In1Pin = 5
-In2Pin = 7
+GPIO.setup(Motor1A, GPIO.OUT)
+GPIO.setup(Motor2A, GPIO.OUT)
+GPIO.setup(Motor1EN, GPIO.OUT)
 
-GPIO.setmode(GPIO.BOARD)
-GPIO.setup(En1Pin, GPIO.OUT)
-GPIO.setup(In1Pin, GPIO.OUT)
-GPIO.setup(In2Pin, GPIO.OUT)
+def forward():
+    GPIO.output(Motor1A, GPIO.HIGH)
+    GPIO.output(Motor2A, GPIO.LOW)
 
-en1 = GPIO.PWM(En1Pin, 100)
-en1.start(0)
-en1.ChangeDutyCycle(0)
+def reverse():
+    GPIO.output(Motor1A, GPIO.LOW)
+    GPIO.output(Motor2A, GPIO.HIGH)
 
-for direction in [True, False]:
-    print('running ' + ('forward' if direction else 'backward'))
+def ramp_up():
+    pwm.start(80)
+    for i in range(80, 110, 10):
+        pwm.ChangeDutyCycle(i)
+        print("{0}%".format(i))
+        time.sleep(5)
 
-    # what is which direction depends on how the motor is wired
-    GPIO.output(In1Pin, direction)
-    GPIO.output(In2Pin, not direction)
-    stepSize = 10
+pwm = GPIO.PWM(Motor1EN, 1000)
+forward()
+ramp_up()
+pwm.stop()
+time.sleep(1)
+reverse()
+ramp_up()
+pwm.stop()
 
-    for x in range(int(100 / stepSize)):
-        speed = stepSize * (x + 1)
-        print('speed: {}'.format(speed))
-        sys.stdout.flush()
-        en1.ChangeDutyCycle(speed)
-        time.sleep(2)
-
-print('done')
-
-GPIO.output(In1Pin, False)
-GPIO.output(In2Pin, False)
-
-# stops anyway when en1 goes out of scope
-en1.ChangeDutyCycle(0)
-en1.stop()
 GPIO.cleanup()
