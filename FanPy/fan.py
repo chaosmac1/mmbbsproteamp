@@ -11,7 +11,7 @@ def get():
     print(x.text)
     temparatures = x.json()["data"]["sensorDatas"]
     print(temparatures[len(temparatures) - 1]["kelvin"])
-    return int(temparatures)
+    return int(temparatures[len(temparatures) - 1]["kelvin"])
 
 GPIO.setmode(GPIO.BCM)
 Motor1A= 23
@@ -38,12 +38,14 @@ def ramp_up():
         time.sleep(5)
 
 def run():
+    pwm = GPIO.PWM(Motor1EN, 1000)
     forward()
     while True:
-        if get() >= 293:
-            pwm = GPIO.PWM(Motor1EN, 1000)
+        temp = get()
+        if temp >= 293:
             ramp_up()
-        if get() < 293:
+            time.sleep(1)
+        if temp < 293:
             pwm.stop()
             time.sleep(1)
 
